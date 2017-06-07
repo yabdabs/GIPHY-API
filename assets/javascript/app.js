@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 var wordExists;
-var searchTerms=["Cats", "Dogs", "Zebra"];
+var searchTerms=["Funny", "Basketball", "animals"];
 
 
 
@@ -10,13 +10,13 @@ $(document).on("click", ".buttonTopic", function(){
 	$(".giphy").empty();
 	var value= $(this).attr("data-value");
 
-	var url= "http://api.giphy.com/v1/gifs/search?q=" + value + "&api_key=dc6zaTOxFJmzC";
+	var url= "https://api.giphy.com/v1/gifs/search?q=" + value + "&api_key=dc6zaTOxFJmzC";
 
 	$.ajax({
 		url: url, 
 		method: "GET",
 		data:{
-			limit:30,
+			limit:10,
 			rating: "r"
 		}
 	}).done(function(response){
